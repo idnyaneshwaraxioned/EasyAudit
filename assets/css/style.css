@@ -162,7 +162,21 @@ header .wrapper {
   right: 7%;
   transform: translateY(-50%);
   top: 4%;
+  background-color: #37C989;
 }
+
+.hamburger::after {
+  content: '\f0c9';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 35px;
+  font-family: fontAwesome;
+  color: #000;
+}
+
+.hamburger.active::after { content: '\f00d'; }
 
 .bar1 {
   width: 100%;
@@ -434,7 +448,7 @@ nav a span {
   font-family: fontSIX;
   word-spacing: 1px;
   letter-spacing: 1px;
-  color: #9f9c9c;
+  color: #6c737a;
 }
 
 .counter-content h4 {
@@ -461,7 +475,23 @@ nav a span {
   align-items: center;
 }
 
-.counter-list li { flex-basis: 25%;   }
+.counter-list li { 
+  flex-basis: 25%;
+  position: relative;
+}
+
+.counter-list li::after {
+  content: '';
+  height: 100%;
+  width: 1px;
+  background-color: #4a4a4a;
+  position: absolute;
+  top: 0;
+  transform: rotate(19deg);
+  right: 0; 
+}
+
+.counter-list li:last-child::after { display: none; }
 
 .counter-list li span {
   margin: 2px 0;
@@ -491,18 +521,164 @@ nav a span {
 }
 
 /* ============== Counter section Ends ============ */
+
+
+/* =========== Our team start ======== */
+
+.our-team .wrapper {
+  padding: 117px 0 77px;
+  text-align: center;
+}
+
+.our-team h5 {
+  font-size: 45px;
+  font-family: fontSix;
+}
+
+.our-team h5 span{
+  font-size: 45px;
+  font-family: fontFive;
+  color: #808080;
+}
+
+.team-slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.team-slider li { 
+  padding: 125px 0 105px;
+  flex-basis: 33.3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;;
+}
+
+.team-slider figure {
+  margin: 22px 0;
+  width: 33.5%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.title { 
+  padding-bottom: 18px;
+  position: relative; 
+}
+
+.title::after {
+  content: '';
+  width: 90%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #dad9d9;
+}
+
+.title h6 {
+  margin: 5px 0;
+  font-size: 24px;
+  font-family: fontFour;
+}
+
+.title span {
+  font-size: 15px;
+  color: #949191;
+  font-family: fontEight;
+}
+
+.contacts { margin: 12px 0; }
+
+.contacts a { 
+  padding: 7px 0;
+  display: block;
+  position: relative;
+  font-size: 14px;
+  color: #3A3C3E;
+  font-family: fontFour;
+}
+
+.email::before,
+.phone::before {
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  font-family: fontAwesome;
+  color: #37C989;
+}
+
+.email::before { content: '\f0e0'; }
+.phone::before { content: '\f2a0'; }
+
+
+/* =========== Our team end ======== */
 /*=================================
   main styling ends here
 =================================*/
 
 /*=================================
   footer styling starts here
-=================================*/ 
+=================================*/
+footer { background-color: #3A3C3E; }
 
+footer .wrapper {
+  padding: 35px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #dad9d9;
+}
 
+footer span {
+  font-size: 14px;
+  font-family: fontFour;
+}
 
+.social { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social span { 
+  margin: 0 5px;
+  font-family: fontTwo;
+ }
 
+.social a span {
+  text-indent: -99999px;
+  float: left;
+}
 
+.social a { 
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 0 5px;
+  position: relative;
+  background-color: #464A4D;
+ }
+
+.social a::after {
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-family: fontAwesome;
+}
+
+.facebook::after { content: '\f082'; }
+.twitter::after { content: '\f099'; }
+.google::after { content: '\f0d5'; }
 
 
  /*=================================
