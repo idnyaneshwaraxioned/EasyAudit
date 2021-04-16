@@ -237,8 +237,9 @@ nav a span {
 .dropdown { 
   position: absolute;
   display: none;
-  background-color: #fff;
   transition: .6s;
+  background-color: #fff;
+  z-index: 2;
  }
 
  .dropdown li { 
@@ -257,12 +258,239 @@ nav a span {
 
 .slide.active { display: none; }
 
+.slide { position: relative; }
+
+.slide .wrapper { 
+  width: 48.5%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.slider-content { 
+  padding: 27px 0 58px;
+  position: relative;
+}
+.slider-content::after,
+.slider-content::before {
+  content: '';
+  height: 100%;
+  width: 5%;
+  position: absolute;
+}
+
+.slider-content::after {
+  right: -4px;
+  top: -4px;
+  border-top: 2px solid #37C989;
+  border-right: 2px solid #37C989;
+  border-bottom: 2px solid #37C989;
+}
+
+.slider-content::before {
+  left: -4px;
+  top: -4px;
+  border-top: 2px solid #37C989;
+  border-left: 2px solid #37C989;
+  border-bottom: 2px solid #37C989;
+}
+
+.slider-content h2 {
+  font-size: 62px;
+  font-weight: bold;
+  font-family: fontFour;
+  letter-spacing: 1px;
+}
+
+.slider-content h2 span { 
+  font-family: fontFive;
+  font-weight: 100;
+  font-size: 62px;
+}
+
+.slider-content span {
+  font-family: fontEight;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #e9e7e7;
+}
+
+.slider-btn a{
+  padding: 18px 4.7%;
+  position: absolute;
+  left: 50%;
+  bottom: -25px;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+  background: #37C989;
+}
 
 
+/* ============= account-audit =========== */
+.account-audit .wrapper {
+  max-width: 1838px;
+  width: 100%;
+  text-align: center;
+}
 
+.account-audit .services-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
+.services-list li {
+  padding: 67px 0;
+  flex-basis: 33.3%;
+  box-sizing: border-box;
+  border-right: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+}
 
+.services-list li:nth-child(4),
+.services-list li:nth-child(5),
+.services-list li:nth-child(6) { border-bottom: none; }
 
+.services-list h3 {
+  font-size: 32px;
+  font-family: fontEight;
+  font-weight: bold;
+}
+
+.services-list p {
+  padding: 0 21%;
+  margin: 13px 0;
+  font-size: 15px;
+  font-family: fontFour;
+  line-height: 23px;
+}
+.services-list li span {
+  position: relative;
+  margin: 25px 0;
+  display: inline-block;
+  color: #fff;
+}
+
+.services-list li span::after {
+  position: absolute;
+  font-family: fontAwesome;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: #404040;
+}
+
+.services-list li:nth-child(1) span::after { content: '\f0b1'; }
+.services-list li:nth-child(2) span::after { content: '\f1ec'; }
+.services-list li:nth-child(3) span::after { content: '\f46d'; }
+.services-list li:nth-child(4) span::after { content: '\f2a0'; }
+.services-list li:nth-child(5) span::after { content: '\f164'; }
+.services-list li:nth-child(6) span::after { content: '\f005'; }
+
+.list-btn a span { 
+  text-indent: -99999px;
+  float: left;  
+}
+
+.list-btn a { position: relative; }
+
+.list-btn a::after {
+  content: '\f061';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  font-family: fontAwesome;
+  color: #000 ;
+}
+
+/* ============= account-audit Ends=========== */
+
+/* ============== Counter section Start ============ */
+.counter {
+  height: 526px;
+  background-color: #37C989;
+}
+
+.counter .wrapper {
+  width: 65%;
+  padding: 100px 0;
+  position: relative;
+  top: -45px;
+  text-align: center;
+  background-color: #3A3C3E;
+  color: #ededed;
+}
+
+.counter-content span {
+  font-size: 23px;
+  font-family: fontSIX;
+  word-spacing: 1px;
+  letter-spacing: 1px;
+  color: #9f9c9c;
+}
+
+.counter-content h4 {
+  font-size: 45px;
+  font-family: fontSix;
+}
+
+.counter-content h4 span {
+  font-size: 45px;
+  font-family: fontFive;
+  color: #c6c4c4;
+}
+
+.counter-content p {
+  font-size: 15px;
+  font-family: fontFour;
+  color: #c6c4c4;
+}
+
+.counter-list {
+  margin: 60px 0 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counter-list li { flex-basis: 25%;   }
+
+.counter-list li span {
+  margin: 2px 0;
+  display: block;
+  font-family: fontSix;
+  font-size: 14px;
+  color: #000;
+}
+
+.counter-list li span.count {
+  font-size: 72px;
+  color: #37C989;
+}
+
+.counter-btn a {
+  padding: 18px 3.5%;
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+  background: #37C989;
+}
+
+.counter-btn span {
+  font-size: 18px;
+  margin: 0 18px;
+  font-family: fontThree;
+}
+
+/* ============== Counter section Ends ============ */
 /*=================================
   main styling ends here
 =================================*/
