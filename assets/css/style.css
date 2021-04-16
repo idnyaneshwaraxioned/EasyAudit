@@ -99,18 +99,153 @@ li {
 
 /*for wrapper*/
 .wrapper {
-  max-width: 1360px;
-  width: 86%; 
+  max-width: 1745px;
+  width: 63%;
   margin: 0 auto;
+}
+
+@font-face {
+  font-family: 'fontOne';
+  src: url(../../fonts/KFOjCnqEu92Fr1Mu51TzBic6CsQ.woff2);
+}
+
+@font-face {
+  font-family: 'fontTwo';
+  src: url(../../fonts/KFOjCnqEu92Fr1Mu51TzBic6CsQ.woff2);
+}
+
+@font-face {
+  font-family: 'fontThree';
+  src: url(../../fonts/KFOkCnqEu92Fr1Mu51xIIzI.woff2);
+}
+
+@font-face {
+  font-family: 'fontFour';
+  src: url(../../fonts/KFOlCnqEu92Fr1MmEU9fBBc4.woff2);
+}
+
+@font-face {
+  font-family: 'fontFive';
+  src: url(../../fonts/KFOlCnqEu92Fr1MmSU5fBBc4.woff2);
+}
+
+@font-face {
+  font-family: 'fontSix';
+  src: url(../../fonts/KFOlCnqEu92Fr1MmWUlfBBc4.woff2);
+}
+
+@font-face {
+  font-family: 'fontSeven';
+  src: url(../../fonts/KFOlCnqEu92Fr1MmYUtfBBc4.woff2);
+}
+
+@font-face {
+  font-family: 'fontEight';
+  src: url(../../fonts/KFOmCnqEu92Fr1Mu4mxK.woff2);
 }
 /*=================================
   Header styling starts here
 =================================*/
 
 
+header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 43px 0;
+}
+.hamburger { 
+  width: 40px;
+  height: 40px;
+  display: none;
+  position: absolute;
+  right: 7%;
+  transform: translateY(-50%);
+  top: 4%;
+}
 
+.bar1 {
+  width: 100%;
+  height: 0;
+  border-top: 2px solid #fff;
+  margin-bottom: 6px;
+  text-indent: -99999px;
+  float: left;
+}
 
+.logo { flex-basis: 20%; }
 
+.logo a {
+  font-size: 18px;
+  font-style: italic;
+  font-family: fontFour;
+  font-weight: bold;
+  color: #404040;
+}
+.logo a span {  
+  font-family: fontFive;
+  color: gray;
+}
+
+nav { flex-basis: 60%; }
+
+nav a {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: fontFour;
+  color: #404040;
+}
+
+nav a.active { color: #37C989; }
+
+nav a:hover { 
+  color: #37C989;
+  text-decoration: underline;
+}
+
+.menu { 
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+ }
+
+nav a span {
+  text-indent: -99999px;
+  float: left;
+}
+
+.menuitem { position: relative; }
+.menuitem:last-child a { position: relative; }
+
+.menuitem:last-child a::after {
+  content: '\f007';
+  font-family: fontAwesome;
+}
+
+.menuitem:nth-child(3)::after {
+  content: '\f078';
+  margin: 0 5px;
+  position: absolute;
+  top: 17%;
+  font-size: 10px;
+  color: gray;
+  font-family: fontAwesome;
+}
+.menuitem:nth-child(3):hover::after { transform: rotate(180deg);}
+.menuitem:hover .dropdown { display: block; }
+
+.dropdown { 
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  transition: .6s;
+ }
+
+ .dropdown li { 
+  display: block;
+  width: 108px;
+  padding: 5px;
+ }
 
 /*=================================
   Header styling ends here
@@ -120,6 +255,7 @@ li {
   main styling starts here
 =================================*/
 
+.slide.active { display: none; }
 
 
 
