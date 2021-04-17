@@ -610,11 +610,8 @@ nav a span {
   font-family: fontEight;
 }
 
-.contacts { 
-  margin: 12px 0;
-  display: flex;
-  flex-direction: column;
-}
+.contacts { margin: 12px 0; }
+.cnt-links { margin: 15px 0; }
 
 .contacts a { 
   display: inline;
