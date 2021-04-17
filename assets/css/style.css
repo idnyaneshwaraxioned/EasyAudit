@@ -154,15 +154,28 @@ header .wrapper {
   align-items: center;
   padding: 43px 0;
 }
+
 .hamburger { 
   width: 40px;
   height: 40px;
   display: none;
   position: absolute;
   right: 7%;
-  transform: translateY(-50%);
   top: 4%;
 }
+
+.hamburger::after {
+  content: '\f0c9';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 35px;
+  font-family: fontAwesome;
+  color: #000;
+}
+
+.hamburger.active::after { content: '\f00d'; }
 
 .bar1 {
   width: 100%;
@@ -173,15 +186,31 @@ header .wrapper {
   float: left;
 }
 
-.logo { flex-basis: 20%; }
+.logo { 
+  margin: 0 35px;
+  flex-basis: 20%; 
+  position: relative; }
 
 .logo a {
+  position: relative;
   font-size: 18px;
   font-style: italic;
   font-family: fontFour;
   font-weight: bold;
   color: #404040;
 }
+
+.logo::before {
+  content: '\f002';
+  position: absolute;
+  left: -15%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 35px;
+  font-family: fontAwesome;
+  color: #37C989;
+}
+
 .logo a span {  
   font-family: fontFive;
   color: gray;
@@ -190,7 +219,8 @@ header .wrapper {
 nav { flex-basis: 60%; }
 
 nav a {
-  font-size: 15px;
+  font-size: 14px;
+  letter-spacing: 1px;
   font-weight: bold;
   font-family: fontFour;
   color: #404040;
@@ -207,7 +237,7 @@ nav a:hover {
   width: 100%;
   display: flex;
   justify-content: space-between;
- }
+}
 
 nav a span {
   text-indent: -99999px;
@@ -256,8 +286,6 @@ nav a span {
   main styling starts here
 =================================*/
 
-.slide.active { display: none; }
-
 .slide { position: relative; }
 
 .slide .wrapper { 
@@ -267,38 +295,29 @@ nav a span {
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #fff;
+  color: #fffdfd;
 }
 
 .slider-content { 
   padding: 27px 0 58px;
   position: relative;
-}
-.slider-content::after,
-.slider-content::before {
-  content: '';
-  height: 100%;
-  width: 5%;
-  position: absolute;
-}
 
-.slider-content::after {
-  right: -4px;
-  top: -4px;
-  border-top: 2px solid #37C989;
-  border-right: 2px solid #37C989;
-  border-bottom: 2px solid #37C989;
-}
+  background:
+    linear-gradient(to right, #37C989 3px, transparent 3px) 0 0,
+    linear-gradient(to right, #37C989 3px, transparent 3px) 0 100%,
+    linear-gradient(to left, #37C989 3px, transparent 3px) 100% 0,
+    linear-gradient(to left, #37C989 3px, transparent 3px) 100% 100%,
+    linear-gradient(to bottom, #37C989 3px, transparent 3px) 0 0,
+    linear-gradient(to bottom, #37C989 3px, transparent 3px) 100% 0,
+    linear-gradient(to top, #37C989 3px, transparent 3px) 0 100%,
+    linear-gradient(to top, #37C989 3px, transparent 3px) 100% 100%;
 
-.slider-content::before {
-  left: -4px;
-  top: -4px;
-  border-top: 2px solid #37C989;
-  border-left: 2px solid #37C989;
-  border-bottom: 2px solid #37C989;
+  background-repeat: no-repeat;
+  background-size: 44px 44px;
 }
 
 .slider-content h2 {
+  position: relative;
   font-size: 62px;
   font-weight: bold;
   font-family: fontFour;
@@ -328,8 +347,14 @@ nav a span {
   font-size: 14px;
   color: #fff;
   background: #37C989;
+  transition: .3s;
 }
 
+.counter-btn a:hover,
+.slider-btn a:hover {
+  color: #37C989;
+  background-color: #fff;
+}
 
 /* ============= account-audit =========== */
 .account-audit .wrapper {
@@ -365,9 +390,9 @@ nav a span {
 
 .services-list p {
   padding: 0 21%;
-  margin: 13px 0;
+  margin-top: 13px;
   font-size: 15px;
-  font-family: fontFour;
+  font-family: fontEight;
   line-height: 23px;
 }
 .services-list li span {
@@ -411,6 +436,11 @@ nav a span {
   color: #000 ;
 }
 
+.list-btn a:hover::after {
+  border-radius: 50%;
+  color: #37C989;
+  box-shadow: 0 0 20px #404040;
+}
 /* ============= account-audit Ends=========== */
 
 /* ============== Counter section Start ============ */
@@ -430,14 +460,13 @@ nav a span {
 }
 
 .counter-content span {
-  font-size: 23px;
-  font-family: fontSIX;
-  word-spacing: 1px;
-  letter-spacing: 1px;
-  color: #9f9c9c;
+  font-size: 24px;
+  font-family: fontSix;
+  color: #6c737a;
 }
 
 .counter-content h4 {
+  margin: 2px 0;
   font-size: 45px;
   font-family: fontSix;
 }
@@ -461,7 +490,23 @@ nav a span {
   align-items: center;
 }
 
-.counter-list li { flex-basis: 25%;   }
+.counter-list li { 
+  flex-basis: 25%;
+  position: relative;
+}
+
+.counter-list li::after {
+  content: '';
+  height: 100%;
+  width: 1px;
+  background-color: #4a4a4a;
+  position: absolute;
+  top: 0;
+  transform: rotate(19deg);
+  right: 0; 
+}
+
+.counter-list li:last-child::after { display: none; }
 
 .counter-list li span {
   margin: 2px 0;
@@ -477,11 +522,12 @@ nav a span {
 }
 
 .counter-btn a {
-  padding: 18px 3.5%;
+  padding: 16px 3.5%;
   font-weight: bold;
   font-size: 14px;
   color: #fff;
   background: #37C989;
+  transition: .3s;
 }
 
 .counter-btn span {
@@ -491,28 +537,349 @@ nav a span {
 }
 
 /* ============== Counter section Ends ============ */
+
+
+/* =========== Our team start ======== */
+
+.our-team .wrapper {
+  width: 68%;
+  padding: 117px 0 77px;
+  text-align: center;
+}
+
+.our-team h5 {
+  font-size: 45px;
+  font-family: fontSix;
+}
+
+.our-team h5 span{
+  font-size: 45px;
+  font-family: fontFive;
+  color: #808080;
+}
+
+.team-slider {
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.team-slider li { 
+  padding: 125px 0 105px;
+  flex-basis: 33.3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;;
+}
+
+.team-slider figure {
+  margin: 22px auto;
+  width: 33.5%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.title { 
+  padding-bottom: 18px;
+  position: relative; 
+}
+
+.title::after {
+  content: '';
+  width: 45%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #dad9d9;
+}
+
+.title h6 {
+  margin: 5px 0;
+  font-size: 24px;
+  font-family: fontFour;
+}
+
+.title span {
+  font-size: 15px;
+  color: #949191;
+  font-family: fontEight;
+}
+
+.contacts { 
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts a { 
+  display: inline;
+  padding: 7px 0;
+  position: relative;
+  font-size: 14px;
+  color: #3A3C3E;
+  font-family: fontFour;
+}
+
+.contacts a:hover { text-decoration: underline; }
+
+.email::before,
+.phone::before {
+  position: absolute;
+  left: -28px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  font-family: fontAwesome;
+  color: #37C989;
+}
+
+.email::before { content: '\f0e0'; }
+.phone::before { content: '\f2a0'; }
+
+
+/* =========== Our team end ======== */
 /*=================================
   main styling ends here
 =================================*/
 
 /*=================================
   footer styling starts here
-=================================*/ 
+=================================*/
+footer { background-color: #3A3C3E; }
 
+footer .wrapper {
+  padding: 29px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #dad9d9;
+}
 
+footer span {
+  font-size: 14px;
+  font-family: fontFour;
+}
 
+.social { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social span { 
+  margin: 0 5px;
+  font-family: fontTwo;
+ }
 
+.social a span {
+  text-indent: -99999px;
+  float: left;
+}
 
+.social a { 
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 0 5px;
+  position: relative;
+  background-color: #464A4D;
+ }
+
+.social a::after {
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-family: fontAwesome;
+}
+
+.social a:hover::after { color: #37C989; }
+
+.facebook::after { content: '\f082'; }
+.twitter::after { content: '\f099'; }
+.google::after { content: '\f0d5'; }
 
 
  /*=================================
   footer styling ends here
 =================================*/ 
 
+/* ============= Slick controls====== */
+.our-team .slick-slide {
+  transform: scale(0.8);
+  opacity: 0.3;
+  transition: all ease .5s;
+}
+.our-team .slick-slide.slick-current {
+  position: relative;
+  border-top: 5px solid #37C989;
+  border-bottom: 5px solid #37C989;
+  /* border-left: 1px solid #ededed;
+  border-right: 1px solid #ededed; */
+  transform: scale(1);
+  opacity: 1;
+}
+
+.our-team .slick-slide.slick-current::before,
+.our-team .slick-slide.slick-current::after {
+  content: '';
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: #ededed;
+}
+
+.our-team .slick-slide.slick-current::before { left: 0; } 
+.our-team .slick-slide.slick-current::after { right: 0; }
+ 
+/* ============= Slick controls====== */
+
+
 /*media query starts*/
 /*media query for 995px starts here*/
+
+
+@media only screen and (max-width: 1204px) {
+
+.contacts a:hover { text-decoration: none; }
+
+nav a:hover { 
+  color: inherit;
+  text-decoration: none;
+}
+
+.counter-btn a:hover,
+.slider-btn a:hover {
+  color: inherit;
+  background-color: #37C989;
+}
+
+/* .email::before, .phone::before { left: 13%; } */
+
+.list-btn a:hover::after {
+  border-radius: unset;
+  color: #000;
+  box-shadow: none;
+}
+
+.social a:hover::after { color: #fff; }
+
+header .wrapper { width: 80%; }
+
+nav { flex-basis: 80%; }
+
+.slide .wrapper { 
+  width: 75%;
+  box-sizing: border-box; 
+}
+.slider-content h2 { font-size: 25px; } 
+.slider-content h2 span { font-size: 25px; } 
+}  
+
 @media only screen and (max-width: 995px) {
 
+.logo { flex-basis: 40%; }
+.logo::before { left: -26%; }
+
+.hamburger {
+  display: block;
+}
+
+header .wrapper { flex-direction: column; }
+.logo { flex-basis: 100%; }
+nav { flex-basis: 100%; }
+
+.logo a { font-size: 20px; }
+
+.menu { 
+  width: 100%;
+  padding-bottom: 35px;
+  display: none;
+  position: absolute;
+  top: 18%;
+  left: 0;
+  flex-direction: column;
+  z-index: 3;
+  text-align: center;
+  background-color: #37C989;
+}
+
+.menu.active { display: block; }
+
+.menuitem { 
+  width: 100%;
+  padding: 10px 0;
+  display: block;
+}
+
+.dropdown { 
+  position: relative;
+  text-align: center;
+}
+
+.dropdown li {
+  width: 100%;
+}
+
+.slide .wrapper { display: none; }
+.services-list { flex-direction: column; }
+
+.services-list li:nth-child(4),
+.services-list li:nth-child(5),
+.services-list li:nth-child(6) { border-bottom: 1px solid #ededed; }
+
+.counter { height: unset; }
+
+.counter .wrapper { 
+  position: unset;  
+  width: 100%; 
+}
+
+.counter-list { flex-direction: column; }
+.counter-content h4 span,
+.counter-content h4 { font-size: 35px; }
+.counter-list li span.count { font-size: 50px; }
+
+.counter-list li::after { display: none; }
+
+.counter-list li {
+  width: 100%;
+  padding: 25px 0;
+  border-bottom: 1px solid #4a4a4a;
+}
+
+/* .email::before, .phone::before { left: 35%; } */
+
+.counter-list li:last-child { border: none; }
+.counter-btn a { padding: 18px 7%; }
 
 
-}  
+footer .wrapper { flex-direction: column; }
+footer span { margin: 25px 0; }
+
+.slick-slider { display: flex; }
+.our-team .slick-slide {
+  transform: scale(0.8);
+  opacity: 0.3;
+  transition: all ease .5s;
+}
+.our-team .slick-slide.slick-current {
+  border-top: 5px solid #37C989;
+  border-bottom: 5px solid #37C989;
+  border-left: 1px solid #ededed;
+  border-right: 1px solid #ededed;
+  transform: scale(1);
+  opacity: 1;
+}
+
+
+
+}
