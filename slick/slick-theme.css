@@ -206,12 +206,12 @@
     color: black;
 }
 
-.slick-center {
+/* .slick-center {
     border-top: 5px solid #37C989;
     border-bottom: 5px solid #37C989;
     border-left: 1px solid #ededed;
     border-right: 1px solid #ededed;
-}
+} */
 
 @media only screen and (max-width: 995px) {
 
