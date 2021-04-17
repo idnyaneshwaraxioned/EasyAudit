@@ -186,7 +186,10 @@ header .wrapper {
   float: left;
 }
 
-.logo { flex-basis: 20%; position: relative; }
+.logo { 
+  margin: 0 35px;
+  flex-basis: 20%; 
+  position: relative; }
 
 .logo a {
   position: relative;
@@ -216,7 +219,8 @@ header .wrapper {
 nav { flex-basis: 60%; }
 
 nav a {
-  font-size: 15px;
+  font-size: 14px;
+  letter-spacing: 1px;
   font-weight: bold;
   font-family: fontFour;
   color: #404040;
@@ -291,35 +295,25 @@ nav a span {
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #fff;
+  color: #fffdfd;
 }
 
 .slider-content { 
   padding: 27px 0 58px;
   position: relative;
-}
-.slider-content::after,
-.slider-content::before {
-  content: '';
-  height: 100%;
-  width: 5%;
-  position: absolute;
-}
 
-.slider-content::after {
-  right: -4px;
-  top: -4px;
-  border-top: 2px solid #37C989;
-  border-right: 2px solid #37C989;
-  border-bottom: 2px solid #37C989;
-}
+  background:
+    linear-gradient(to right, #37C989 3px, transparent 3px) 0 0,
+    linear-gradient(to right, #37C989 3px, transparent 3px) 0 100%,
+    linear-gradient(to left, #37C989 3px, transparent 3px) 100% 0,
+    linear-gradient(to left, #37C989 3px, transparent 3px) 100% 100%,
+    linear-gradient(to bottom, #37C989 3px, transparent 3px) 0 0,
+    linear-gradient(to bottom, #37C989 3px, transparent 3px) 100% 0,
+    linear-gradient(to top, #37C989 3px, transparent 3px) 0 100%,
+    linear-gradient(to top, #37C989 3px, transparent 3px) 100% 100%;
 
-.slider-content::before {
-  left: -4px;
-  top: -4px;
-  border-top: 2px solid #37C989;
-  border-left: 2px solid #37C989;
-  border-bottom: 2px solid #37C989;
+  background-repeat: no-repeat;
+  background-size: 44px 44px;
 }
 
 .slider-content h2 {
@@ -330,14 +324,6 @@ nav a span {
   letter-spacing: 1px;
 }
 
-/* .slider-content h2::after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: transparent;
-  z-index: 3;
-} */
 
 .slider-content h2 span { 
   font-family: fontFive;
@@ -405,9 +391,9 @@ nav a span {
 
 .services-list p {
   padding: 0 21%;
-  margin: 13px 0;
+  margin-top: 13px;
   font-size: 15px;
-  font-family: fontFour;
+  font-family: fontEight;
   line-height: 23px;
 }
 .services-list li span {
@@ -475,14 +461,13 @@ nav a span {
 }
 
 .counter-content span {
-  font-size: 23px;
-  font-family: fontSIX;
-  word-spacing: 1px;
-  letter-spacing: 1px;
+  font-size: 24px;
+  font-family: fontSix;
   color: #6c737a;
 }
 
 .counter-content h4 {
+  margin: 2px 0;
   font-size: 45px;
   font-family: fontSix;
 }
@@ -538,7 +523,7 @@ nav a span {
 }
 
 .counter-btn a {
-  padding: 18px 3.5%;
+  padding: 16px 3.5%;
   font-weight: bold;
   font-size: 14px;
   color: #fff;
@@ -558,6 +543,7 @@ nav a span {
 /* =========== Our team start ======== */
 
 .our-team .wrapper {
+  width: 68%;
   padding: 117px 0 77px;
   text-align: center;
 }

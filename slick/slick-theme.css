@@ -70,11 +70,11 @@
 {
     /* font-family: 'slick'; */
     font-family: fontAwesome;
-    font-size: 35px;
+    font-size: 30px;
     line-height: 1;
 
     opacity: .75;
-    color: #474747;
+    color: #fff;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
