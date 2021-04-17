@@ -5,12 +5,16 @@
 $(document).ready(function () {
 
 	$('.banner-slider').slick({
+		autoplay: true,
+		autoplaySpeed: 2000,
 	});
 
 	$('.team-slider').slick({
 		centerMode: true,
 		centerPadding: '60px',
 		slidesToShow: 3,
+		autoplay: true,
+		autoplaySpeed: 2000,
 		responsive: [
 			{
 				breakpoint: 997,
@@ -18,7 +22,7 @@ $(document).ready(function () {
 					arrows: true,
 					centerMode: true,
 					centerPadding: '40px',
-					slidesToShow: 2
+					slidesToShow: 1
 				}
 			},
 			{
@@ -36,7 +40,7 @@ $(document).ready(function () {
 
 	// ============== humburger btn===============
 
-	$('.hamburger').click(function(){
+	$('.hamburger').click(function () {
 		$('.hamburger').toggleClass('active');
 		$('.menu').toggleClass('active');
 	})

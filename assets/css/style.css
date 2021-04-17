@@ -324,7 +324,6 @@ nav a span {
   letter-spacing: 1px;
 }
 
-
 .slider-content h2 span { 
   font-family: fontFive;
   font-weight: 100;
@@ -611,11 +610,14 @@ nav a span {
   font-family: fontEight;
 }
 
-.contacts { margin: 12px 0; }
+.contacts { 
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+}
 
 .contacts a { 
   padding: 7px 0;
-  display: block;
   position: relative;
   font-size: 14px;
   color: #3A3C3E;
@@ -715,14 +717,28 @@ footer span {
   transition: all ease .5s;
 }
 .our-team .slick-slide.slick-current {
+  position: relative;
   border-top: 5px solid #37C989;
   border-bottom: 5px solid #37C989;
-  border-left: 1px solid #ededed;
-  border-right: 1px solid #ededed;
+  /* border-left: 1px solid #ededed;
+  border-right: 1px solid #ededed; */
   transform: scale(1);
   opacity: 1;
 }
 
+.our-team .slick-slide.slick-current::before,
+.our-team .slick-slide.slick-current::after {
+  content: '';
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: #ededed;
+}
+
+.our-team .slick-slide.slick-current::before { left: 0; } 
+.our-team .slick-slide.slick-current::after { right: 0; }
+ 
 /* ============= Slick controls====== */
 
 
@@ -745,6 +761,7 @@ nav a:hover {
   background-color: #37C989;
 }
 
+.email::before, .phone::before { left: 13%; }
 
 .list-btn a:hover::after {
   border-radius: unset;
@@ -838,6 +855,8 @@ nav { flex-basis: 100%; }
   border-bottom: 1px solid #4a4a4a;
 }
 
+.email::before, .phone::before { left: 35%; }
+
 .counter-list li:last-child { border: none; }
 .counter-btn a { padding: 18px 7%; }
 
@@ -845,7 +864,7 @@ nav { flex-basis: 100%; }
 footer .wrapper { flex-direction: column; }
 footer span { margin: 25px 0; }
 
-
+.slick-slider { display: flex; }
 .our-team .slick-slide {
   transform: scale(0.8);
   opacity: 0.3;
