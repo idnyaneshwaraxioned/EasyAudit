@@ -617,6 +617,7 @@ nav a span {
 }
 
 .contacts a { 
+  display: inline;
   padding: 7px 0;
   position: relative;
   font-size: 14px;
@@ -629,7 +630,7 @@ nav a span {
 .email::before,
 .phone::before {
   position: absolute;
-  left: 25%;
+  left: -28px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
@@ -761,7 +762,7 @@ nav a:hover {
   background-color: #37C989;
 }
 
-.email::before, .phone::before { left: 13%; }
+/* .email::before, .phone::before { left: 13%; } */
 
 .list-btn a:hover::after {
   border-radius: unset;
@@ -855,7 +856,7 @@ nav { flex-basis: 100%; }
   border-bottom: 1px solid #4a4a4a;
 }
 
-.email::before, .phone::before { left: 35%; }
+/* .email::before, .phone::before { left: 35%; } */
 
 .counter-list li:last-child { border: none; }
 .counter-btn a { padding: 18px 7%; }
