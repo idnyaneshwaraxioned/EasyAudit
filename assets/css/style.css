@@ -741,7 +741,7 @@ footer span {
 
 
 /*media query starts*/
-/*media query for 995px starts here*/
+/*media query for 1204px starts here*/
 
 
 @media only screen and (max-width: 1204px) {
@@ -862,21 +862,11 @@ nav { flex-basis: 100%; }
 footer .wrapper { flex-direction: column; }
 footer span { margin: 25px 0; }
 
-.slick-slider { display: flex; }
-.our-team .slick-slide {
-  transform: scale(0.8);
-  opacity: 0.3;
-  transition: all ease .5s;
-}
-.our-team .slick-slide.slick-current {
-  border-top: 5px solid #37C989;
-  border-bottom: 5px solid #37C989;
-  border-left: 1px solid #ededed;
-  border-right: 1px solid #ededed;
-  transform: scale(1);
-  opacity: 1;
+.team-slider .slick-prev {
+  bottom: -8%;
 }
 
-
+/* .team-slider .slick-prev { left: 0;} 
+.team-slider .slick-next { left: 0;} */
 
 }

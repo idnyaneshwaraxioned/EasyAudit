@@ -212,9 +212,3 @@
     border-left: 1px solid #ededed;
     border-right: 1px solid #ededed;
 } */
-
-@media only screen and (max-width: 995px) {
-
-    .slick-prev:before, .slick-next:before { font-size: 30px; }
-    .slick-dots li button:before {font-size: 17px; }
-}
