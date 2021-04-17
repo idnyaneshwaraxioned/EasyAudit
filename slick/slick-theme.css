@@ -27,8 +27,8 @@
 
     display: block;
 
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -37,7 +37,8 @@
     cursor: pointer;
 
     color: transparent;
-    border: none;
+    border: 1px solid #474747;
+    transform: rotate(45deg);
     outline: none;
     background: transparent;
     z-index: 1;
@@ -67,12 +68,13 @@
 .slick-prev:before,
 .slick-next:before
 {
-    font-family: 'slick';
-    font-size: 40px;
+    /* font-family: 'slick'; */
+    font-family: fontAwesome;
+    font-size: 35px;
     line-height: 1;
 
     opacity: .75;
-    color: #6BA9DF;
+    color: #474747;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -80,7 +82,7 @@
 
 .slick-prev
 {
-    left: 0;
+    left: 10%;
 }
 [dir='rtl'] .slick-prev
 {
@@ -98,7 +100,7 @@
 
 .slick-next
 {
-    right: 0;
+    right: 10%;
 }
 [dir='rtl'] .slick-next
 {
@@ -202,6 +204,13 @@
 {
     opacity: .75;
     color: black;
+}
+
+.slick-center {
+    border-top: 5px solid #37C989;
+    border-bottom: 5px solid #37C989;
+    border-left: 1px solid #ededed;
+    border-right: 1px solid #ededed;
 }
 
 @media only screen and (max-width: 995px) {
